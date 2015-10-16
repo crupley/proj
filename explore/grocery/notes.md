@@ -18,6 +18,11 @@ Store flier > cost-effective, nutritionally complete recipe selection > grocery 
 	* [usda](http://ndb.nal.usda.gov/ndb/doc/index) - ~9000 foods, requires data.gov API key
 	* RDA
 
+## Challenges
+
+* integration
+* nutrition combinatorics
+* store prices, non-sale
 
 ## Technical skills
 
@@ -26,3 +31,15 @@ Store flier > cost-effective, nutritionally complete recipe selection > grocery 
 * recommender
 * crazy combinatorics problem
 * matching names/descriptions
+
+## 4 Questions
+
+1. Ask a good question - can meal planning be automated, cheap, and good
+2. Technically impressive - many DS skills, though not much ML
+3. Obvious utility - save $, time. Health
+4. wrapping / UI - many possibilities
+
+## Competition
+
+* [http://www.foodplannerapp.com/](http://www.foodplannerapp.com/) - import and edit own recipes, grocery list, meal plans, (inventory?) - **no health / sale info**
+* [cookinglight](http://www.cookinglight.com/weeknight-meal-planner) - very slick drag-and-drop image planner
