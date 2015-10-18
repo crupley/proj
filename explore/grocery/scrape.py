@@ -17,10 +17,13 @@ def f2fquery(sort='r', page=1, apikey=f2fapi.key):
 	payload = {'key':apikey,
 			   'sort': sort,
 			   'page': page}
-	response = requests.get(requrl, params = payload)
+	try:
+		response = requests.get(requrl, params = payload)
+	except:
+		print 'request fail'
 
 	#add page number it was pulled from
-	count = response.json()['count']
+	#count = response.json()['count']
 	result = []
 	for item in response.json()['recipes']:
 		item['page'] = page
@@ -58,6 +61,8 @@ d=tab.find().sort([('page', -1)]).limit(1)
 d=list(d)['page']
 '''
 
-for page in xrange(3, 450):
+for page in xrange(468, 490):
+	if page % 10 == 0:
+		print 'Pages pulled: %d, DB size: %d' % (page, tab.count())
 	q = f2fquery(page=page)
-	
+	tab.insert(q)
