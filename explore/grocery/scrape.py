@@ -50,7 +50,15 @@ def f2f_getnextpage(table):
 
 	return
 
-def f2f_getall(table):
+def f2f_getall():
+	#$ sudo mongod
+	# requires running mongodb sever
+	client = MongoClient()
+	# Initiate Database
+	db = client['f2f']
+	# Initiate Table
+	tab = db['recipes']
+
 	result = 0
 	i = 0
 	while result != -1:
@@ -59,32 +67,8 @@ def f2f_getall(table):
 		if i % 10 == 0:
 			print 'Queries: %d, DB size: %d' % (i, table.count())
 
+#yummly
 
 
-#$ sudo mongod
-# requires running mongodb sever
-client = MongoClient()
-# Initiate Database
-db = client['f2f']
-# Initiate Table
-tab = db['recipes']
 
 
-'''
-tab.insert(c['recipes'])
-
-
-d=tab.aggregate([{'$group':{'_id':"$page", 'last': {'$max':1}}}])
-d=list(d)
-
-x = -1
-d=tab.find().sort([('page', -1)]).limit(1)
-d=list(d)
-['page']
-'''
-
-# for page in xrange(468, 490):
-# 	if page % 10 == 0:
-# 		print 'Pages pulled: %d, DB size: %d' % (page, tab.count())
-# 	q = f2fquery(page=page)
-# 	tab.insert(q)
