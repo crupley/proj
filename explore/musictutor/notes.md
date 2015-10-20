@@ -16,7 +16,8 @@
 
 ## Technical skills
 
-
+* time series
+* analysis/featurization
 
 
 ## 4 Questions

@@ -6,6 +6,7 @@
 * Data
 	* Wikipedia dataset
 	* million song dataset
+	* gutenberg
 
 * knowledge areas
 	* graph
@@ -13,14 +14,19 @@
 		* ancestry
 		* movies
 	* text
-	* image?
 
 * subject
 	* energy
 	* education
 
+* photo library management
+* pork in bills
 * simcity-style city overlay maps
 * yelp neighborhood map
+* plain language requests to code
+* fuel economy based on gps movement data
+* song musical instrument decomposition
+	* separate tracks
 
 ## A-Team
 
