@@ -3,6 +3,9 @@
 
 from pymongo import MongoClient
 import requests
+from bs4 import BeautifulSoup
+import numpy as np
+import pandas as pd
 
 from code.f2f import f2fapi
 
@@ -68,6 +71,53 @@ def f2f_getall():
 			print 'Queries: %d, DB size: %d' % (i, table.count())
 
 #yummly
+
+
+#Safeway
+#get data
+pages = []
+for page in xrange(1,8):
+	url = 'http://plan.safeway.com/Circular/San-Francisco-145-Jackson-St-/0C2574301/Weekly/2/%d' % page
+	z = requests.get(url).content
+	pages.append(z)
+
+products = {'price':list(),
+			'brand':list(),
+			'title':list()}
+price = []
+brand = []
+title = []
+
+#pnum = 0
+pricetable = []
+
+for pnum, page in enumerate(pages, 1):
+	#inum = 0
+	#pnum +=1
+	print 'page ', pnum
+	soup = BeautifulSoup(page)
+	items = soup.findAll('div', attrs={'class':'tooltip'})
+	for inum, item in enumerate(items, 1):
+		#inum += 1
+		print 'item ', inum
+		if len(item) > 3:
+			# price.append(item.find('p', attrs={'class':'itemPrice'}).text)
+			# brand.append(item.find('p', attrs={'class':'itemBrand'}).text)
+			# title.append(item.find('p', attrs={'class':'itemTitle'}).text)
+			# products['price'] = products['price'].append(price)
+			# products['brand'] = products['brand'].append(brand)
+			# products['title'] = products['title'].append(title)
+			pricetable.append([
+				pnum,
+				inum,
+				item.find('p', attrs={'class':'itemPrice'}).text,
+				item.find('p', attrs={'class':'itemBrand'}).text,
+				item.find('p', attrs={'class':'itemTitle'}).text])
+			
+pricetable = pd.DataFrame(pricetable, columns = ['pagenum', 'itemnum',
+												 'price',
+												 'brand',
+												 'title'])
 
 
 
