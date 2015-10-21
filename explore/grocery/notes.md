@@ -13,10 +13,13 @@ Store flier > cost-effective, nutritionally complete recipe selection > grocery 
 	* whole foods: same
 * recipes:
 	* [food2fork](http://food2fork.com/about/api) - api, 500 calls/day, 30 records per call (15k/day)
+		* 'over 200,000 recipes'
 	* [yummly](https://developer.yummly.com/) - api, student, 30,000 calls lifetime.
 * nutrition:
 	* [usda](http://ndb.nal.usda.gov/ndb/doc/index) - ~9000 foods, requires data.gov API key
+		* dl from https://www.ars.usda.gov/SP2UserFiles/Place/12354500/Data/SR/SR28/dnload/sr28asc.zip
 	* RDA
+		dl from http://www.cnpp.usda.gov/sites/default/files/dietary_guidelines_for_americans/PolicyDoc.pdf
 
 ## Challenges
 

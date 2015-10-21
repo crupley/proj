@@ -47,7 +47,7 @@ def f2f_getnextpage(table):
 
 	q = f2fquery(page = lastpage + 1)
 	if q != -1:
-		tab.insert(q)
+		table.insert(q)
 	else:
 		return -1
 
@@ -66,59 +66,60 @@ def f2f_getall():
 	i = 0
 	while result != -1:
 		i += 1
-		result = f2f_getnextpage(table)
+		result = f2f_getnextpage(tab)
 		if i % 10 == 0:
-			print 'Queries: %d, DB size: %d' % (i, table.count())
+			print 'Queries: %d, DB size: %d' % (i, tab.count())
 
 #yummly
 
 
 #Safeway
 #get data
-pages = []
-for page in xrange(1,8):
-	url = 'http://plan.safeway.com/Circular/San-Francisco-145-Jackson-St-/0C2574301/Weekly/2/%d' % page
-	z = requests.get(url).content
-	pages.append(z)
+def safe_pages():
+	pages = []
+	for page in xrange(1,8):
+		url = 'http://plan.safeway.com/Circular/San-Francisco-145-Jackson-St-/0C2574301/Weekly/2/%d' % page
+		z = requests.get(url).content
+		pages.append(z)
+	return pages
 
-products = {'price':list(),
-			'brand':list(),
-			'title':list()}
-price = []
-brand = []
-title = []
+def safe_pricetable(pages):
+	price = []
+	brand = []
+	title = []
 
-#pnum = 0
-pricetable = []
+	#pnum = 0
+	pricetable = []
 
-for pnum, page in enumerate(pages, 1):
-	#inum = 0
-	#pnum +=1
-	print 'page ', pnum
-	soup = BeautifulSoup(page)
-	items = soup.findAll('div', attrs={'class':'tooltip'})
-	for inum, item in enumerate(items, 1):
-		#inum += 1
-		print 'item ', inum
-		if len(item) > 3:
-			# price.append(item.find('p', attrs={'class':'itemPrice'}).text)
-			# brand.append(item.find('p', attrs={'class':'itemBrand'}).text)
-			# title.append(item.find('p', attrs={'class':'itemTitle'}).text)
-			# products['price'] = products['price'].append(price)
-			# products['brand'] = products['brand'].append(brand)
-			# products['title'] = products['title'].append(title)
-			pricetable.append([
-				pnum,
-				inum,
-				item.find('p', attrs={'class':'itemPrice'}).text,
-				item.find('p', attrs={'class':'itemBrand'}).text,
-				item.find('p', attrs={'class':'itemTitle'}).text])
-			
-pricetable = pd.DataFrame(pricetable, columns = ['pagenum', 'itemnum',
-												 'price',
-												 'brand',
-												 'title'])
+	for pnum, page in enumerate(pages, 1):
+		#inum = 0
+		#pnum +=1
+		print 'page ', pnum
+		soup = BeautifulSoup(page)
+		items = soup.findAll('div', attrs={'class':'tooltip'})
+		for inum, item in enumerate(items, 1):
+			#inum += 1
+			print 'item ', inum
+			if len(item) > 3:
+				# price.append(item.find('p', attrs={'class':'itemPrice'}).text)
+				# brand.append(item.find('p', attrs={'class':'itemBrand'}).text)
+				# title.append(item.find('p', attrs={'class':'itemTitle'}).text)
+				# products['price'] = products['price'].append(price)
+				# products['brand'] = products['brand'].append(brand)
+				# products['title'] = products['title'].append(title)
+				pricetable.append([
+					pnum,
+					inum,
+					item.find('p', attrs={'class':'itemPrice'}).text,
+					item.find('p', attrs={'class':'itemBrand'}).text,
+					item.find('p', attrs={'class':'itemTitle'}).text])
+				
+	pricetable = pd.DataFrame(pricetable, columns = ['pagenum', 'itemnum',
+													 'price',
+													 'brand',
+													 'title'])
 
-
+	pricetable.groupby('pagenum').count()
+	return pricetable
 
 
