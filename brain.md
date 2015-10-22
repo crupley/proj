@@ -1,6 +1,12 @@
 
 # Capstone project idea brainstorm
 
+## Thurday
+
+* song lyrics graph
+* python language analysis
+
+
 ## Latest series
 
 * Data
