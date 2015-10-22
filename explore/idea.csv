@@ -1,0 +1,16 @@
+name,desc,?,tech,utility,wrap,difficulty,data,novelty,career
+lyric,song lyrics graph,2,2,3,5,2,5,3,2
+pylang,python language analysis,3,3,3,2,3,3,2,2
+photosort,photo library management,4,4,5,4,4,4,4,4
+pork,pork in bills,4,3,3,2,2,5,4,3
+simcity,simcity map overlays,3,4,3,5,2,4,3,3
+neighbors,yelp neighborhood map,4,4,4,5,2,4,2,3
+talkcode,plain language requests to code,5,4,5,3,5,4,5,5
+instrument,song musical instrument decomposition,4,5,4,4,4,2,3,3
+calpic,get food calories from picture,5,5,5,5,5,3,5,4
+outfit,picture of outfit —> buy parts,5,5,5,5,5,3,5,5
+grocery,grocery planner,5,3,5,4,4,4,2,3
+activity,activity recommender in city,5,3,4,4,2,3,2,3
+apporg,auto app organizer,4,4,3,3,4,1,4,3
+pianoteacher,custom music instruction,5,4,5,4,5,2,5,5
+language,"language instruction, word frequency",4,4,5,3,3,4,3,3
