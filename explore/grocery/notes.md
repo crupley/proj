@@ -20,6 +20,7 @@ Store flier > cost-effective, nutritionally complete recipe selection > grocery 
 		* dl from https://www.ars.usda.gov/SP2UserFiles/Place/12354500/Data/SR/SR28/dnload/sr28asc.zip
 	* RDA
 		dl from http://www.cnpp.usda.gov/sites/default/files/dietary_guidelines_for_americans/PolicyDoc.pdf
+	* Food prices from [usda](http://www.ers.usda.gov/data-products/quarterly-food-at-home-price-database.aspx)
 
 ## Challenges
 
