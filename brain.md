@@ -1,6 +1,17 @@
 
 # Capstone project idea brainstorm
 
+## Friday
+
+* youtube university
+* farm to table - ingredients tree
+* computer generated music
+	* mood based
+* songs to sentiments
+	* recommend songs based on what's on screen
+		* tie to song lyric sentiments?
+	* generate music to match mood of work
+
 ## Thurday
 
 * song lyrics graph
@@ -26,7 +37,7 @@
 	* education
 
 * photo library management
-* pork in bills
+* pork in bills - https://www.govtrack.us/developers/data
 * simcity-style city overlay maps
 * yelp neighborhood map
 * plain language requests to code
