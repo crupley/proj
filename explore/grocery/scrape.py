@@ -123,14 +123,7 @@ def dbstatus():
 
 	print 'f2f database status:', 
 	print 'Total records: %d,' % tab.find().count(),
-	print 'Total ingredients: %d' % tab.find({'ingredients':{'$exists':True}}).count()
-
-
-#next highest ranked without ingredients
-#tab.find({'ingredients':None}).sort([('social_rank', pymongo.DESCENDING)]).limit(1).next()
-
-#yummly
-
+	print 'Total w/ingredients: %d' % tab.find({'ingredients':{'$exists':True}}).count()
 
 #Safeway
 #get data
