@@ -1,5 +1,9 @@
 # Personal diet manager
 
+Chris Rupley
+October 26, 2015
+
+
 ## Description
 
 The goal of the project is to provide personalized meal planning recommendations with some or all of the following features,
@@ -21,8 +25,8 @@ The goal of the project is to provide personalized meal planning recommendations
 
 ## Data needs and availability
 	* recipe information
-		* 200,000+ recipes available through api
-		* if api limits reached, can resort to scraping
+		* 200,000+ recipes available through api (Food2Fork and Yummly)
+		* if api limits too restrictive, can resort to scraping
 	* recommended dietary intake
 		* document available from USDA
 	* food nutrient database
@@ -37,3 +41,9 @@ The goal of the project is to provide personalized meal planning recommendations
 * problems with obtaining recipe data
 * problems with scraping sale price data
 * matching descriptions and formats among many different data sources
+
+## Next Steps
+
+* collect and organize all data
+* link all data sources with appropriate keys
+* establish approach for nutrition match and recommedation

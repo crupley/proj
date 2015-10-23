@@ -21,6 +21,12 @@ Store flier > cost-effective, nutritionally complete recipe selection > grocery 
 	* RDA
 		dl from http://www.cnpp.usda.gov/sites/default/files/dietary_guidelines_for_americans/PolicyDoc.pdf
 	* Food prices from [usda](http://www.ers.usda.gov/data-products/quarterly-food-at-home-price-database.aspx)
+* ingredients
+	* http://openfoodfacts.org/ - 58,000 products, mostly french
+	* http://www.nutritionix.com/business/api - has some ingredients
+	* http://www.foodfacts.com/ - has data, can I get to it?
+	* http://www.upcdatabase.com/
+	* http://developer.foodessentials.com/api - good api, might have ingredients
 
 ## Challenges
 
