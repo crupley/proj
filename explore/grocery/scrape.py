@@ -1,6 +1,7 @@
 
 
 
+import pymongo
 from pymongo import MongoClient
 import requests
 from bs4 import BeautifulSoup
@@ -40,6 +41,8 @@ def f2fquery(sort='r', page=1, apikey=f2fapi.key):
 	
 	return result
 
+
+
 def f2f_getnextpage(table):
 	d=table.find().sort([('page', -1)]).limit(1)
 	d=list(d)
@@ -69,6 +72,62 @@ def f2f_getall():
 		result = f2f_getnextpage(tab)
 		if i % 10 == 0:
 			print 'Queries: %d, DB size: %d' % (i, tab.count())
+
+def f2fgetingredients(recipeid, apikey=f2fapi.key):
+	requrl = 'http://food2fork.com/api/get'
+	payload = {'key': apikey,
+			   'rId': recipeid}
+	try:
+		response = requests.get(requrl, params = payload)
+	except:
+		print 'request fail'
+		return -1
+
+	# stop if limit reached and return error code
+	if response.json().values()[0] == 'limit':
+		print 'limit reached'
+		return -1
+	
+	return response.json()['recipe']['ingredients']
+
+def f2fgetallingredients():
+	#$ sudo mongod
+	# requires running mongodb sever
+	client = MongoClient()
+	# Initiate Database
+	db = client['f2f']
+	# Initiate Table
+	tab = db['recipes']
+
+	topemptys = tab.find({'ingredients':None}).sort([('social_rank',
+													  pymongo.DESCENDING)])
+	topids = [i['recipe_id'] for i in topemptys]
+
+	i = 0
+	for oneid in topids:
+		i += 1
+		if i % 10 == 0: print dbstatus()
+		ingredients = f2fgetingredients(oneid)
+		if ingredients == -1: return
+		tab.update({'recipe_id':oneid}, 
+				   {'$set': {'ingredients':ingredients}}, upsert=True)
+
+def dbstatus():
+	#$ sudo mongod
+	# requires running mongodb sever
+	client = MongoClient()
+	# Initiate Database
+	db = client['f2f']
+	# Initiate Table
+	tab = db['recipes']
+
+	print 'f2f database status:', 
+	print 'Total records: %d,' % tab.find().count(),
+	print 'Total ingredients: %d' % tab.find({'ingredients':{'$exists':True}}).count()
+
+
+#next highest ranked without ingredients
+#tab.find({'ingredients':None}).sort([('social_rank', pymongo.DESCENDING)]).limit(1).next()
 
 #yummly
 
