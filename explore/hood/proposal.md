@@ -23,6 +23,8 @@ The objective of this project is to independently identify neighborhoods and bou
 	* clustering, dimensionality reduction, hidden features
 	* similarity
 	* geo-spatial analysis
+3. Obvious utility
+	* many applications listed above.
 4. Wrapping paper
 	* web app, interactive maps
 
