@@ -1,6 +1,15 @@
 
 # Capstone project idea brainstorm
 
+## Saturday
+
+* patents
+	* clustering
+	* similarity
+	* importance
+	* product?
+		* better patent search
+
 ## Friday
 
 * youtube university
