@@ -12,15 +12,18 @@
 
 * business
 	* (registered businesses sf)[https://data.sfgov.org/Economy-and-Community/Registered-Business-Locations-San-Francisco/g8m3-pdis]
-	* 38 MB
+		* by address
+		* 38 MB
 [yelp dataset](https://www.yelp.com/dataset_challenge/dataset)
 	* business lat/lon, reviews, users
 	* only select cities
 	* 575 MB (zipped)
 * address to lat lon
 	* (http://geocoder.us/)
+		* url request -> scrape
 	* [US TIGER/line](http://www.census.gov/geo/maps-data/data/tiger.html)(tlgdb)
 		* CA
+		* address lookup database
 		* 219 MB (zipped)
 * population density
 	* [Gridded population of the world](http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-density) (usa_gpwv)
@@ -61,3 +64,8 @@
 
 ###SF Open Data, checked
 * all tabular data
+
+
+###Ref
+
+[spatial cluster analysis](https://books.google.com/books?hl=en&lr=&id=4iqX4926x40C&oi=fnd&pg=PA395&dq=geographic+cluster+boundaries&ots=XHZIU6vDXB&sig=r-e74fc7v0jVtuNcz_gb5_xfB7k#v=onepage&q=geographic%20cluster%20boundaries&f=false) - google books
