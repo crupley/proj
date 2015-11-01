@@ -14,7 +14,7 @@
 	* (registered businesses sf)[https://data.sfgov.org/Economy-and-Community/Registered-Business-Locations-San-Francisco/g8m3-pdis]
 		* by address
 		* 38 MB
-[yelp dataset](https://www.yelp.com/dataset_challenge/dataset)
+* [yelp dataset](https://www.yelp.com/dataset_challenge/dataset)
 	* business lat/lon, reviews, users
 	* only select cities
 	* 575 MB (zipped)
