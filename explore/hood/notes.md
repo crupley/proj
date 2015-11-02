@@ -7,7 +7,7 @@
 ###Have
 
 * crime
-	* [sf opendata](https://data.sfgov.org/Public-Safety/SFPD-Incidents-from-1-January-2003/tmnf-yvry) (by district)
+	* [sf opendata](https://data.sfgov.org/Public-Safety/SFPD-Incidents-from-1-January-2003/tmnf-yvry) (lat, lon)
 		* 107 MB
 
 * business
